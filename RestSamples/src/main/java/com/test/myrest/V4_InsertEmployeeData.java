@@ -32,8 +32,8 @@ public class V4_InsertEmployeeData {
 	
 	@Path("/insertEmployee")
 	@POST
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_OCTET_STREAM)
+	@Consumes(MediaType.APPLICATION_OCTET_STREAM)
+	@Produces(MediaType.APPLICATION_JSON)
 	public String InsertEmployee(Employee empl){
 		
 		String returnStr = "Nothing to Update";
