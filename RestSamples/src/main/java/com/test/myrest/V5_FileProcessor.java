@@ -1,5 +1,6 @@
 package com.test.myrest;
 
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
@@ -16,45 +17,17 @@ import com.test.pojo.Employee;
 public class V5_FileProcessor {
 	
 	
-	@Path("/insertEmployee")
-	@POST
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_OCTET_STREAM)
-	public String InsertEmployee(Employee empl){
-		
-		String returnStr = "Nothing to Update";
-		PreparedStatement ps = null;
-		Connection con = null;
-		
-		try{
-				con = RestSQLDBAccessor.getSQLDBConn().getConnection();
-				System.out.println("CHECK 1");	
-				String sql = "INSERT INTO EMPLOYEE VALUES (?, ?, ?, ?, ?, ?)";
-				System.out.println("CHECK 2");
-				//Employee empl = (Employee)jsonEmp.get("emp");
-		System.out.println("CHECK 2.1");		
-				ps = con.prepareStatement(sql);
-				System.out.println("CHECK 3");	
-				ps.setString(1, empl.getfNamr());
-				System.out.println("CHECK 4");	
-				ps.setString(2, empl.getlName());
-				System.out.println("CHECK 5");	
-				ps.setString(3, empl.getEmpCode());	
-				System.out.println("CHECK 6");	
-				ps.setDate(4, empl.getbDate());
-				System.out.println("CHECK 7");	
-				ps.setString(5, empl.getSex()+"");
-				System.out.println("CHECK 8");	
-				ps.setInt(6, empl.getSalary());
-				System.out.println("CHECK 9");	
-				int i = ps.executeUpdate();	
-				System.out.println("CHECK 10");	
-				returnStr="Successfully inserted the employee data into the employee table. Inserted row count :"+i;
-		}catch(Exception e){
-			returnStr="Exception caught: "+e.toString();
-		}	
-		return returnStr;
-	}
+    @POST
+    @Path("/upload")
+    @Consumes(MediaType.APPLICATION_OCTET_STREAM)
+    @Produces(MediaType.APPLICATION_JSON)
+    public String uploadFile(InputStream uploadedInputStream) {
+        String resturnStr = uploadedInputStream.toString();
+ 
+
+        return resturnStr;
+
+    }
 
 
 }

@@ -5,3 +5,4 @@ com\myws\json\ToJSON.class
 com\test\pojo\Employee.class
 com\test\myrest\V3_GetEmployee.class
 com\test\dao\RestSQLDBAccessor.class
+com\test\myrest\V5_FileProcessor.class
