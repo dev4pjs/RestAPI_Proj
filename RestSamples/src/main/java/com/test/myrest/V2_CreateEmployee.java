@@ -108,7 +108,7 @@ public class V2_CreateEmployee {
 		try {
 
 			con = RestSQLDBAccessor.getSQLDBConn().getConnection();
-			String sql = "CREATE TABLE IF NOT EXISTS EMPLOYEE ( FNAME VARCHAR(25) NOT NULL, LNAME VARCHAR(15) NOT NULL, EMP_CODE VARCHAR(9) NOT NULL, BDATE DATE, SEX CHAR, SALARY INTEGER)";
+			String sql = "CREATE TABLE IF NOT EXISTS EMPLOYEE ( FNAME VARCHAR(25) NOT NULL, LNAME VARCHAR(15) NOT NULL, EMP_CODE VARCHAR(9) NOT NULL, BDATE DATE, SEX VARCHAR(1), SALARY INTEGER)";
 			s = con.createStatement();
 			s.execute(sql);
 			result = "SUCCESSFULLY CREATED THE Table employee..impacted row: ";

@@ -19,15 +19,15 @@ import com.test.pojo.Employee;
 public class V5_FileProcessor {
 	
 	
-    @POST
-    @Path("/upload")
-    @Consumes(MediaType.APPLICATION_OCTET_STREAM)
+	@Path("/upload")
+	@POST
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.APPLICATION_JSON)
     public String uploadFile(InputStream uploadedInputStream) {
         String resturnStr = "Hello World";
  
-        //FileInputStream fileinputstream = (FileInputStream)uploadedInputStream;
-		/*int content;
+ /*       FileInputStream fileinputstream = (FileInputStream)uploadedInputStream;
+		int content;
 		StringBuilder sb = new StringBuilder();
 		try {
 			while ((content = fileinputstream.read()) != -1) {
@@ -50,8 +50,8 @@ public class V5_FileProcessor {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-		}*/
-
+		}
+*/
         return resturnStr;
 
     }
