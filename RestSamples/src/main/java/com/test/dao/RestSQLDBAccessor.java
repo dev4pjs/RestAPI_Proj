@@ -24,7 +24,7 @@ public class RestSQLDBAccessor {
 				ctx= new InitialContext();
 			}
 				//dbSQL=(DataSource) ctx.lookup("jdbc/MyDataSourcedb2");
-			dbSQL=(DataSource) ctx.lookup("jdbc/mysql-purujit");
+				dbSQL=(DataSource) ctx.lookup("jdbc/mysql-purujit");
 				System.out.println("dqlDB ==>"+dbSQL.toString());
 		}catch(Exception e){
 				System.out.println("Failed to create the  Data Source."+e);
